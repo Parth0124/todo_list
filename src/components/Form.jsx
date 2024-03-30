@@ -1,7 +1,7 @@
 // Form.jsx
 function Form(props) {
-    const handleSubmit = (event) => {
-      event.preventDefault();
+    const handleSubmit = (e) => {
+      e.preventDefault();
       props.addItem();
     };
   
