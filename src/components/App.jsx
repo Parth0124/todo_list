@@ -25,7 +25,14 @@ function App() {
       ...prevItems,
       { text: inputText, completed: false, priority: priority, highlighted: true },
     ]);
+    setInputText(""); // Clear the input field after adding the item
   }
+  
+  const onSubmit = (event) => {
+    event.preventDefault(); // Prevent the default form submission behavior
+    addItem(); // Call the addItem function to add the item
+  };
+  
 
   function toggleCompletion(index) {
     setItems((prevItems) => {
@@ -44,7 +51,7 @@ function App() {
   return (
     <div className="container">
       <Header currentDate={currentDate}/>
-      <Form setPriority={setPriority} handleChange={handleChange} addItem={addItem}/>
+      <Form inputText={inputText} setPriority={setPriority} handleChange={handleChange} onSubmit={onSubmit} addItem={addItem}/>
       <Todolist items={items} toggleCompletion={toggleCompletion}/>
       <Footer clearCompleted={clearCompleted} remainingCount={remainingCount}/>
     </div>
