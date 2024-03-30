@@ -1,9 +1,9 @@
 /* eslint-disable */
 import React, { useState, useEffect } from 'react';
-import Header from './Header';
-import Form from './Form';
-import Todolist from './Todolist';
-import Footer from './Footer';
+import Header from './components/Header';
+import Form from './components/Form';
+import Todolist from './components/Todolist';
+import Footer from './components/Footer';
 
 function App() {
   const [inputText, setInputText] = useState("");
